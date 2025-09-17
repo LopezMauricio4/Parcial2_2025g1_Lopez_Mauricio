@@ -1,0 +1,84 @@
+:root {
+    --bs-blue-100: #cfe2ff;
+    --bs-blue-200: #9ec5fe;
+    --bs-blue-300: #6ea8fe;
+    --primary-light-blue: #e0f2ff;
+    --primary-dark-blue: #007bff;
+    --text-color: #333;
+}
+
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--primary-light-blue);
+    color: var(--text-color);
+    transition: background-color 0.5s ease-in-out;
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="%23007bff" class="bi bi-arrow-right-short" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/></svg>') 16 16, auto;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+.custom-navbar {
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo-text {
+    color: var(--primary-dark-blue) !important;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.navbar-brand:hover .logo-text {
+    color: var(--bs-blue-300) !important;
+}
+
+.nav-link {
+    color: var(--text-color);
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--primary-dark-blue);
+    transform: translateY(-2px);
+}
+
+
+@keyframes textHoverGlow {
+    from {
+        text-shadow: 0 0 0 rgba(0, 123, 255, 0.5);
+    }
+    to {
+        text-shadow: 0 0 15px rgba(0, 123, 255, 0.8);
+    }
+}
+
+.hover-animate {
+    transition: color 0.3s ease;
+}
+
+.hover-text:hover {
+    animation: textHoverGlow 0.5s ease-in-out forwards;
+}
+
+.carousel-item img {
+    object-fit: cover;
+    height: 400px;
+    width: 100%;
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    filter: invert(100%);
+}
+
+
+.mt-auto {
+    margin-top: auto !important;
+}

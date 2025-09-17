@@ -1,0 +1,161 @@
+:root {
+    --bs-blue-100: #cfe2ff;
+    --bs-blue-200: #9ec5fe;
+    --bs-blue-300: #6ea8fe;
+    --primary-light-blue: #e0f2ff;
+    --primary-dark-blue: #007bff;
+    --text-color: #333;
+}
+
+/* Base styles */
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--primary-light-blue);
+    color: var(--text-color);
+    transition: background-color 0.5s ease-in-out;
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="%23007bff" class="bi bi-arrow-right-short" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/></svg>') 16 16, auto;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+main {
+    padding-top: 150px; 
+}
+
+
+.container-custom-width {
+    width: 80%; 
+}
+
+
+.custom-navbar {
+    background-color: rgba(21, 49, 109, 0.8);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+ 
+}
+
+.logo-text {
+    color: var(--primary-dark-blue) !important;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.navbar-brand:hover .logo-text {
+    color: var(--bs-blue-300) !important;
+}
+
+.nav-link {
+    color: var(--text-color);
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--primary-dark-blue);
+    transform: translateY(-2px);
+}
+.container-custom-width {
+    width: 80%; 
+}
+
+
+@keyframes card-pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.02);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+.project-card {
+    border-radius: 15px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #fff;
+    position: relative;
+    
+    animation: card-pulse 2s ease-in-out infinite;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    
+    animation-play-state: paused;
+}
+
+.project-card img {
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+
+.hover-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 123, 255, 0.7);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.project-card:hover .hover-overlay {
+    opacity: 1;
+}
+
+.hover-text {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover .hover-text {
+    transform: translateY(0);
+}
+
+
+.fixed-title-container {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    transition: top 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+
+.fixed-title-container.scrolled {
+    position: fixed;
+    top: 30%; 
+    transform: translate(-50%, -50%);
+}
+
+
+.content-container {
+    margin-top: 15vh;
+}
+
+
+.fixed-title-container h2,
+.fixed-title-container p {
+    color: #004085; 
+}
